@@ -1,0 +1,18 @@
+<!-- library/templates/library/author_list.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Author List</title>
+</head>
+<body>
+    <h1>Authors</h1>
+    <ul>
+        {% for author in authors %}
+            <li><a href="{% url 'author_detail' author.pk %}">{{ author.name }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'author_create' %}">Add New Author</a>
+</body>
+</html>
